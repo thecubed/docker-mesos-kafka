@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 jar='kafka-mesos*.jar'
-java -jar $jar "$@"
+java ${JVM_OPTS:--Xmx256m} -jar $jar "$@"
