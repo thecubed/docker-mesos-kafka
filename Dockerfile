@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 ENV MESOS_VERSION 0.28.1-2.0.20.ubuntu1404
 ENV MESOS_KAFKA_VERSION 0.9.5.1
-ENV KAFKA_VERSION 0.8.2.2
+ENV KAFKA_VERSION 0.10.0.0
 
 # Add mesos repo
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF \
@@ -14,7 +14,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF \
 
 RUN mkdir -p /kafka-mesos
 WORKDIR /kafka-mesos
-RUN wget -o /dev/null https://github.com/mesos/kafka/releases/download/$MESOS_KAFKA_VERSION/kafka-mesos-$MESOS_KAFKA_VERSION.jar
+RUN wget -o /dev/null https://github.com/mesos/kafka/releases/download/v$MESOS_KAFKA_VERSION/kafka-mesos-$MESOS_KAFKA_VERSION.jar
 RUN wget https://archive.apache.org/dist/kafka/$KAFKA_VERSION/kafka_2.11-$KAFKA_VERSION.tgz
 ADD docker-entrypoint.sh /kafka-mesos/docker-entrypoint.sh
 
