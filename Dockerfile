@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-ENV MESOS_VERSION 0.28.1-2.0.20.ubuntu1404
+ENV MESOS_VERSION 1.0.0-2.0.89.ubuntu1404
 ENV MESOS_KAFKA_VERSION 0.9.5.1
 ENV KAFKA_VERSION 0.10.0.0
 
@@ -9,7 +9,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF \
 	&& echo deb http://repos.mesosphere.io/ubuntu trusty main > /etc/apt/sources.list.d/mesosphere.list \
 	&& apt-get update \
 	&& apt-get install -qy \
-		wget openjdk-7-jdk mesos=$MESOS_VERSION \
+		wget openjdk-8-jdk mesos=$MESOS_VERSION \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /kafka-mesos
