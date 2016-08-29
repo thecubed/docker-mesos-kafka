@@ -8,8 +8,8 @@ ENV KAFKA_VERSION 0.10.0.0
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF \
 	&& echo deb http://repos.mesosphere.io/ubuntu trusty main > /etc/apt/sources.list.d/mesosphere.list \
 	&& apt-get update \
-	&& apt-get install -qy \
-		wget openjdk-8-jdk mesos=$MESOS_VERSION \
+	&& apt-get install -qy --no-install-recommends \
+		wget openjdk-7-jre-headless mesos=$MESOS_VERSION \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /kafka-mesos
