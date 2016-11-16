@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 ENV MESOS_VERSION 1.0.0-2.0.89.ubuntu1404
 ENV MESOS_KAFKA_VERSION 0.9.5.1
-ENV KAFKA_VERSION 0.10.0.1
+ENV KAFKA_VERSION 0.10.1.0
 
 # Add mesos repo
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF \
