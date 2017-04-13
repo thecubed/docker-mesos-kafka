@@ -18,8 +18,8 @@ WORKDIR /kafka-mesos
 
 # Build from source
 RUN git clone https://github.com/mesos/kafka.git framework && \
-	git checkout $GIT_VERSION && \
 	cd framework && \
+	git checkout $GIT_VERSION && \
 	./gradlew jar && \
 	mv kafka-mesos-$MESOS_KAFKA_VERSION-SNAPSHOT-kafka_2.11-$KAFKA_VERSION.jar ../
 
