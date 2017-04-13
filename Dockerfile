@@ -14,7 +14,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF \
 
 RUN mkdir -p /kafka-mesos
 WORKDIR /kafka-mesos
-RUN wget -o /dev/null https://github.com/mesos/kafka/releases/download/v$MESOS_KAFKA_VERSION/kafka-mesos-$MESOS_KAFKA_VERSION.jar
+RUN wget -o /dev/null https://github.com/mesos/kafka/releases/download/v$MESOS_KAFKA_VERSION/kafka-mesos-$MESOS_KAFKA_VERSION-kafka_2.10-$KAFKA_VERSION.jar
 RUN wget https://archive.apache.org/dist/kafka/$KAFKA_VERSION/kafka_2.12-$KAFKA_VERSION.tgz
 ADD docker-entrypoint.sh /kafka-mesos/docker-entrypoint.sh
 
