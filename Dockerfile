@@ -1,4 +1,4 @@
-FROM ubuntu:14.10
+FROM ubuntu:16.04
 
 ENV MESOS_VERSION 1.0.0
 ENV MESOS_KAFKA_VERSION 0.10.0.0
@@ -6,7 +6,7 @@ ENV KAFKA_VERSION 0.10.1.1
 
 # Add mesos repo
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF \
-	&& echo deb http://repos.mesosphere.io/ubuntu trusty main > /etc/apt/sources.list.d/mesosphere.list \
+	&& echo deb http://repos.mesosphere.io/ubuntu xenial main > /etc/apt/sources.list.d/mesosphere.list \
 	&& apt-get update \
 	&& apt-get install -qy --no-install-recommends \
 		wget openjdk-8-jre-headless mesos=$MESOS_VERSION \
